@@ -1,3 +1,3 @@
-# ToDo List
-ToDo List is an app that saves your task in individual lists that saves on mongodb database
+# TODO List
+TODO List is an app that saves your TODOS in individual lists using mongodb
 https://barel-todolist.herokuapp.com/
