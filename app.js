@@ -36,7 +36,7 @@ const defaultItems = [
     Item({ name: 'Welcome to your todolist!' }),
     Item({ name: 'Hit the + button to add a new item.' }),
     Item({ name: '<-- Hit this to delete an item.' }),
-    Item({ name: 'Create custom lists with adding the name at the URL after \'/\'' }),
+    Item({ name: 'Create custom lists! Just add "/<listname>" to the end of the URL.' }),
 ];
 
 app.get('/', (req, res) => {
