@@ -12,6 +12,7 @@ app.use(express.static('public'));
 
 //? Mongoose
 // mongoose.connect('mongodb://localhost:27017/todolistDB', { useNewUrlParser: true });
+console.log(process.env.MONGO_PASSWORD);
 mongoose.connect(`mongodb+srv://admin:${process.env.MONGO_PASSWORD}@cluster0.jc46m.mongodb.net/todolistDB`, {
     useNewUrlParser: true,
 });
