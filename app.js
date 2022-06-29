@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const _ = require('lodash');
+require('dotenv').config()
 
 const app = express();
 
@@ -35,6 +36,7 @@ const defaultItems = [
     Item({ name: 'Welcome to your todolist!' }),
     Item({ name: 'Hit the + button to add a new item.' }),
     Item({ name: '<-- Hit this to delete an item.' }),
+    Item({ name: 'Create custom lists with adding the name at the URL after \'/\'' }),
 ];
 
 app.get('/', (req, res) => {
