@@ -12,7 +12,9 @@ app.use(express.static('public'));
 
 //? Mongoose
 // mongoose.connect('mongodb://localhost:27017/todolistDB', { useNewUrlParser: true });
-mongoose.connect(`mongodb+srv://admin:${process.env.MONGO_PASSWORD}@cluster0.jc46m.mongodb.net/todolistDB`, { useNewUrlParser: true });
+mongoose.connect(`mongodb+srv://admin:${process.env.MONGO_PASSWORD}@cluster0.jc46m.mongodb.net/todolistDB`, {
+    useNewUrlParser: true,
+});
 
 const itemsSchema = mongoose.Schema({
     name: { type: String, required: true },
@@ -95,7 +97,6 @@ app.post('/delete', (req, res) => {
     const listName = req.body.listName;
     const checkboxId = req.body.checkbox;
 
-
     if (!checkboxId) return;
 
     if (listName === 'Today') {
@@ -105,7 +106,7 @@ app.post('/delete', (req, res) => {
         });
     } else {
         List.findOneAndUpdate({ name: listName }, { $pull: { items: { _id: checkboxId } } }, (e) => {
-            if (e) console.error(e); 
+            if (e) console.error(e);
             else res.redirect('/' + listName);
         });
     }
