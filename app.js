@@ -105,7 +105,7 @@ app.post('/delete', (req, res) => {
         });
     } else {
         List.findOneAndUpdate({ name: listName }, { $pull: { items: { _id: checkboxId } } }, (e) => {
-            if (e) console.error(e);
+            if (e) console.error(e); 
             else res.redirect('/' + listName);
         });
     }
